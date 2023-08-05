@@ -10,7 +10,6 @@ const axios = require("axios");
 const http = require("http");
 const fs = require("fs");
 const CronJob = require("cron").CronJob;
-const axios = require("axios");
 
 const port = process.env.PORT || 7005;
 const app = express();
