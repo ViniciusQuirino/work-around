@@ -65,7 +65,7 @@ const job = new CronJob("* * * * *", async () => {
   }
 });
 
-const jobWhats = new CronJob("* * * * *", async () => {
+const jobWhats = new CronJob("*/4 * * * *", async () => {
   try {
     const response = await axios.post(
       "https://work-around.onrender.com/send-message",
