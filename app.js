@@ -65,19 +65,22 @@ const job = new CronJob("* * * * *", async () => {
   }
 });
 
-// const jobWhats = new CronJob("* * * * *", async () => {
-//   try {
-//     const response = await axios.get("https://db-php.onrender.com/products");
+const jobWhats = new CronJob("* * * * *", async () => {
+  try {
+    const response = await axios.post(
+      "https://work-around.onrender.com/send-message",
+      { message: "Hello", number: "5514998536591@c.us" }
+    );
 
-//     console.log("DEU CERTO");
-//     console.log(response.data)
-//   } catch (error) {
-//     console.error("Ocorreu um erro na requisição:", error.message);
-//   }
-// });
+    console.log("DEU CERTO");
+    console.log(response.data);
+  } catch (error) {
+    console.error("Ocorreu um erro na requisição:", error.message);
+  }
+});
 
 job.start();
-// jobWhats.start();
+jobWhats.start();
 
 client.on("message", async (msg) => {
   console.log(msg.body);
