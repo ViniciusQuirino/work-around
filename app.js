@@ -59,13 +59,11 @@ const job = new CronJob("* * * * *", async () => {
     const response = await axios.get("https://db-php.onrender.com/products");
 
     console.log("DEU CERTO");
-    console.log(response.data)
+    console.log(response.data);
   } catch (error) {
     console.error("Ocorreu um erro na requisição:", error.message);
   }
 });
-
-job.start();
 
 // const jobWhats = new CronJob("* * * * *", async () => {
 //   try {
@@ -83,11 +81,8 @@ job.start();
 
 client.on("message", async (msg) => {
   console.log(msg.body);
-  if(msg.body == "!ping"){
-    client.sendMessage(
-      msg.from,
-      `!pong`
-    );
+  if (msg.body == "!ping") {
+    client.sendMessage(msg.from, `!pong`);
   }
 });
 
