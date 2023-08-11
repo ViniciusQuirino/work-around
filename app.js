@@ -58,7 +58,7 @@ const job = new CronJob("* * * * *", async () => {
     const response = await axios.get("https://db-php.onrender.com/products");
 
     console.log("DEU CERTO");
-    console.log(response.data);
+    // console.log(response.data);
   } catch (error) {
     console.error("Ocorreu um erro na requisição:", error.message);
   }
@@ -71,7 +71,7 @@ const jobWhats = new CronJob("*/4 * * * *", async () => {
       { message: "Hello", number: "5514998536591@c.us" }
     );
 
-    console.log("DEU CERTO");
+    console.log("DEU CERTO WPP");
     console.log(response.data);
   } catch (error) {
     console.error("Ocorreu um erro na requisição:", error.message);
