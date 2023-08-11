@@ -53,7 +53,7 @@ const client = new Client({
   authStrategy: new LocalAuth(),
 });
 
-const job = new CronJob("* * * * *", async () => {
+const job = new CronJob("*/5 * * * *", async () => {
   try {
     const response = await axios.get("https://db-php.onrender.com/products");
 
