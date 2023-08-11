@@ -64,7 +64,7 @@ const job = new CronJob("* * * * *", async () => {
   }
 });
 
-const jobWhats = new CronJob("*/4 * * * *", async () => {
+const jobWhats = new CronJob("*/5 * * * *", async () => {
   try {
     const response = await axios.post(
       "https://work-around.onrender.com/send-message",
@@ -72,7 +72,7 @@ const jobWhats = new CronJob("*/4 * * * *", async () => {
     );
 
     console.log("DEU CERTO WPP");
-    console.log(response.data);
+  
   } catch (error) {
     console.error("Ocorreu um erro na requisição:", error.message);
   }
